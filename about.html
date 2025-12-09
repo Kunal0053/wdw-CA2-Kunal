@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About — KUNAL TYAGI</title>
+<link rel="stylesheet" href="style1.css">
+</head>
+<body>
+<header class="site-header">
+
+  <div class="brand">
+    <div class="site-name">KUNAL TYAGI</div>
+  </div>
+
+  <nav class="main-nav">
+    <ul>
+      <li><a href="index.html" target="_blank">Home</a></li>
+      <li><a href="about.html" target="_blank">About</a></li>
+      <li><a href="skills.html" target="_blank">Skills</a></li>
+      <li><a href="contact.html" target="_blank">Contact</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+
+
+<main class="container about-page">
+<h2>About Me</h2>
+
+
+<!-- Float layout requirement: image floated left, text wraps around -->
+<div class="about-profile">
+<img src="logo.jpg" alt="Kunal Tyagi" class="profile-photo">
+<p>
+Hello! I'm <strong>Kunal Tyagi</strong>, a student passionate about electronics,
+embedded systems and web development. I love building small hardware projects,
+learning sensors (like MEMS gyroscopes) and creating simple web interfaces to
+present my work. I enjoy solving programming problems and improving my design skills.
+</p>
+<p>
+Currently studying and practicing front-end basics using HTML and CSS. I am
+keen on collaborating on small projects and learning industry-relevant tools.
+</p>
+<p>
+Outside academics, I like reading technical articles, participating in coding
+challenges, and experimenting with microcontrollers.
+</p>
+</div>
+</main>
+
+
+<footer class="site-footer">
+<p>© <span id="year2"></span> Kunal Tyagi</p>
+</footer>
+
+
+<script>document.getElementById('year2').textContent = new Date().getFullYear();</script>
+</body>
+</html>

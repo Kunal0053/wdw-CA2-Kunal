@@ -1,0 +1,259 @@
+/* ===== About page — aligned with Glassmorphism / Art-Deco theme =====
+   Replace previous .about-profile and .profile-photo rules with these.
+   Also includes small header tweaks so the About page header matches the site theme.
+*/
+
+/* Header (consistent with glass/art-deco theme) */
+/* ================================
+   GLASSMORPHIC CURVED HEADER (MATCHING YOUR IMAGE)
+   ================================ */
+
+/* ================================
+   UPDATED SITE HEADER (Glass Curved Style)
+   ================================ */
+
+.site-header{
+  width: 95%;
+  max-width: 1300px;
+  margin: 20px auto 30px auto;
+
+  padding: 20px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border-radius: 50px;  /* rounded pill shape */
+  border: 1px solid rgba(255,255,255,0.08);
+
+  backdrop-filter: blur(12px) saturate(140%);
+  -webkit-backdrop-filter: blur(12px) saturate(140%);
+  
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* Remove previous angled background */
+.site-header::before,
+.site-header::after{
+  content: none !important;
+}
+
+
+/* BRAND NAME LEFT */
+.site-name{
+  font-size: 20px;
+  font-weight: 900;
+  color: #d8dde3;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* NAV MENU RIGHT */
+.main-nav ul{
+  list-style:none;
+  display:flex;
+  gap:32px;
+  margin:0;
+  padding:0;
+}
+
+.main-nav a{
+  text-decoration:none;
+  font-size:16px;
+  font-weight:700;
+  color:#d7dce2;
+  transition:0.2s ease;
+}
+
+.main-nav a:hover{
+  color:white;
+  transform:translateY(-2px);
+}
+
+/* LOGO – REMOVE IF NOT USING */
+.logo{
+  width:45px;
+  height:45px;
+  border-radius:12px;
+  object-fit:cover;
+  margin-right:10px;
+  display:none; /* hide because design does not show a logo */
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px){
+  .site-header{
+    flex-direction: column;
+    padding: 14px 20px;
+    gap: 10px;
+    border-radius: 28px;
+  }
+  
+  .main-nav ul{
+    gap:18px;
+  }
+}
+
+.about-page .about-profile{
+  margin-top: 18px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01)) !important;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.035);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.65);
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+body{
+  margin:0;
+  background: linear-gradient(180deg, #0f1720 0%, #091019 100%) !important;
+  color: white;
+  font-family: "Nunito", "Segoe UI", Roboto, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.55;
+}
+/* About section container - uses glass panel and aligns with other sections */
+.about-page .about-profile{
+  margin-top: 18px;
+  padding: 22px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.015));
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.035);
+  box-shadow: 0 12px 40px rgba(2,6,23,0.65);
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* Profile photo - reduced, framed, matches art-deco look */
+.about-page .profile-photo{
+  width: 180px;               /* tidy fixed size */
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 3px solid rgba(255,255,255,0.04);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.6);
+  background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00));
+  flex-shrink: 0;
+  transform: none;
+}
+
+/* Text column — uses same muted colors and spacing as other site text */
+.about-page .about-profile p{
+  flex: 1 1 320px;
+  min-width: 220px;
+  color: var(--muted-2);
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0 0 12px 0;
+}
+/* ===== Fix nav bullets & link styling (applies site-wide) ===== */
+
+/* Ensure list-style removed and no default padding/margin */
+.main-nav ul,
+.main-nav li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* Standard horizontal nav */
+.main-nav ul {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+/* Remove default link underline, set theme colors */
+.main-nav a {
+  color: var(--muted) !important;        /* theme muted color */
+  text-decoration: none !important;      /* remove underlines */
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 700;
+  transition: all 160ms ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Hover / active state */
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #ffffff !important;
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.03);
+  outline: none;
+}
+
+/* If icons used, keep them aligned and same color */
+.main-nav a i {
+  color: inherit;
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* Mobile / stacked nav (still no bullets & aligned) */
+@media (max-width: 760px) {
+  .main-nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start; /* or center if you prefer */
+    padding-left: 0;
+  }
+  .main-nav li { width: 100%; }
+  .main-nav a { width: auto; }
+}
+
+/* Safety: override old browser/UA styles for anchor visited or link color */
+.main-nav a:visited,
+.main-nav a:link,
+.main-nav a:active {
+  color: var(--muted) !important;
+  text-decoration: none !important;
+}
+
+
+/* Optional small title spacing */
+.about-page h2{ color: white; margin-bottom: 10px; font-size: 26px; font-weight: 900; }
+
+/* Small decorative accent — left border to match art-deco cards (subtle) */
+.about-page .about-profile::before{
+  content: "";
+  position: absolute;
+  left: calc(50% - var(--max-width) / 2 + 20px); /* aligns with container left edge */
+  top: auto;
+  display: none; /* hidden by default; can enable for design variation */
+}
+
+/* Mobile responsiveness */
+@media (max-width: 760px){
+  .about-page .about-profile{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 18px;
+  }
+  .about-page .profile-photo{
+    width: 140px;
+    height: 140px;
+    margin: 0 auto 10px;
+  }
+  .about-page .about-profile p{
+    min-width: 0;
+  }
+  .site-header{
+    flex-direction: column;
+    gap: 12px;
+    padding: 12px;
+  }
+}

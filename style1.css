@@ -1,0 +1,297 @@
+/* Glassmorphism + Art-Deco inspired theme
+   Paste this into css/styles.css to replace previous hero/header styles.
+*/
+
+:root{
+  --bg-1: #0f1720;     /* deep navy */
+  --glass: rgba(255,255,255,0.06);
+  --glass-2: rgba(255,255,255,0.04);
+  --accent: #ffd166;   /* warm gold */
+  --accent-2: #7dd3fc; /* cool cyan */
+  --muted: rgba(255,255,255,0.72);
+  --muted-2: rgba(255,255,255,0.55);
+  --card-shadow: 0 10px 30px rgba(2,6,23,0.7);
+  --radius-lg: 16px;
+  --radius-sm: 10px;
+  --max-width: 1120px;
+  --glass-border: rgba(255,255,255,0.07);
+}
+
+/* Page base */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Nunito", "Segoe UI", Roboto, Arial, sans-serif;
+  background: linear-gradient(180deg,var(--bg-1) 0%, #091019 100%);
+  color: white;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+/* Layout container */
+.container{max-width:var(--max-width);margin:40px auto;padding:0 20px}
+
+/* Header: centered glass pill with subtle art-deco lines */
+/* ===============================
+   GLASSMORPHIC HEADER (Matching About Section)
+   =============================== */
+/* ===============================
+   ABOUT PAGE — Fixed Profile Photo Size & Layout
+   Matches Glassmorphism Theme
+   =============================== */
+
+.about-page .about-profile{
+  margin-top: 20px;
+  padding: 22px;
+
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.035);
+  box-shadow: 0 15px 45px rgba(2,6,23,0.65);
+
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+/* FIXED IMAGE SIZE — CLEAN, MODERN */
+.about-page .profile-photo{
+  width: 160px;          /* 🔥 Perfect size */
+  height: 160px;
+  object-fit: cover;
+
+  border-radius: 14px;
+  border: 2px solid rgba(255,255,255,0.07);
+  box-shadow: 0 12px 30px rgba(2,6,23,0.7);
+
+  flex-shrink: 0;        /* Prevents image from stretching */
+}
+
+/* TEXT SECTION NEXT TO IMAGE */
+.about-page .about-profile p{
+  flex: 1;
+  min-width: 260px;
+
+  color: var(--muted-2);
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 12px 0;
+}
+
+/* MOBILE — IMAGE CENTERED & SMALLER */
+@media (max-width: 760px){
+  .about-page .about-profile{
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-page .profile-photo{
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 12px;
+  }
+}
+
+.site-header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  width: 95%;
+  max-width: var(--max-width);
+  margin: 24px auto 30px auto;
+
+  padding: 16px 28px;
+
+  background: linear-gradient(
+      180deg,
+      rgba(255,255,255,0.05),
+      rgba(255,255,255,0.025)
+  );
+
+  border-radius: 50px;
+  border: 1px solid rgba(255,255,255,0.06);
+
+  box-shadow: 0 18px 45px rgba(2,6,23,0.65);
+
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
+
+  transition: all 0.25s ease;
+}
+
+
+/* Brand / logo */
+.brand{display:flex;align-items:center;gap:12px}
+.logo{width:56px;height:56px;border-radius:12px;object-fit:cover;border:1px solid rgba(255,255,255,0.06)}
+.site-name{font-weight:800;font-size:18px;color:var(--muted)}
+
+/* Nav links - thin art-deco separators */
+.main-nav ul{list-style:none;display:flex;gap:12px;margin:0;padding:0;align-items:center}
+.main-nav a{
+  color:var(--muted);
+  text-decoration:none;
+  padding:8px 12px;
+  border-radius:8px;
+  font-weight:700;
+  letter-spacing:0.6px;
+  transition: all 180ms ease;
+}
+.main-nav a:hover{ color: white; transform: translateY(-3px); }
+
+/* Hero variant: left content, decorative geometric column on right */
+.hero{
+  display:grid;
+  grid-template-columns: 1fr 360px;
+  gap:32px;
+  align-items:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding:42px;
+  border-radius:var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.03);
+  box-shadow: var(--card-shadow);
+  position:relative;
+  overflow:hidden;
+}
+
+/* Hero content */
+.hero-content h1{
+  font-size:48px;
+  margin:0 0 12px 0;
+  color: #fff;
+  letter-spacing:-0.02em;
+  line-height:1.02;
+  font-weight:900;
+  display:block;
+}
+.hero-content p{ color:var(--muted-2); font-size:16px; margin:0 0 18px 0; max-width:72ch; }
+
+/* Accent label (thin gold pill) */
+.label-pill{
+  display:inline-block;
+  padding:6px 10px;
+  background: linear-gradient(90deg, rgba(255,209,102,0.12), rgba(125,211,252,0.06));
+  color:var(--accent);
+  border-radius:999px;
+  font-weight:800;
+  letter-spacing:0.6px;
+  margin-bottom:14px;
+  border:1px solid rgba(255,209,102,0.06);
+}
+
+/* Buttons: outline + gold filled (minimal) */
+.btn-row{display:flex;gap:12px;align-items:center}
+.btn-outline{
+  padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.06);
+  color:var(--muted);background:transparent;font-weight:800;cursor:pointer;transition:all 150ms ease;
+}
+.btn-outline:hover{ color:white; transform:translateY(-3px); box-shadow:0 8px 20px rgba(0,0,0,0.5); }
+
+.btn-gold{
+  padding:10px 16px;border-radius:10px;border:none;
+  background: linear-gradient(180deg,var(--accent), #ffbe4b);
+  color:#081018;font-weight:900;cursor:pointer; box-shadow: 0 12px 36px rgba(255,189,66,0.12);
+}
+.btn-gold:hover{ transform:translateY(-3px); }
+
+/* Right column: geometric artwork / portrait placeholder */
+.hero-art{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:360px;
+  border-radius:12px;
+  position:relative;
+  overflow:visible;
+}
+
+/* framed image card */
+.art-card{
+  width:320px;height:360px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+  border:1px solid rgba(255,255,255,0.04);box-shadow:0 30px 70px rgba(4,8,16,0.7);
+  overflow:hidden; position:relative;
+}
+.art-card img{width:100%;height:100%;object-fit:cover;display:block;}
+
+/* small decorative art-deco lines */
+.art-deco-line{
+  position:absolute;
+  height:2px;width:56%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+  top: 12%; left: 12%; border-radius:2px;
+  transform: rotate(-8deg);
+  opacity:0.9;
+}
+
+/* Skills section (cards) - glass panels with pastel accents */
+.skills-page h2{ margin: 6px 0 18px 0; font-size:28px; color: white; font-weight:900; letter-spacing:0.4px; }
+
+.cards{
+  display:flex;gap:18px;flex-wrap:wrap;margin-top:8px;
+}
+.card{
+  flex:1 1 280px; padding:20px;border-radius:12px;min-height:150px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border:1px solid rgba(255,255,255,0.035);
+  box-shadow: 0 10px 30px rgba(2,6,23,0.7);
+  position:relative; overflow:hidden;
+}
+.card h3{ font-size:18px; margin-bottom:10px; color: #fff; font-weight:800; }
+.card p{ color:var(--muted-2); font-size:14px; margin:0; line-height:1.45; }
+
+/* distinct thin accent bar on left of each card (art-deco touch) */
+.card-1{ border-left:6px solid #f6b042; } /* embedded */
+.card-2{ border-left:6px solid #7dd3fc; } /* web */
+.card-3{ border-left:6px solid #9ee493; } /* sensors */
+.card-4{ border-left:6px solid #c996ff; } /* video */
+.card-5{ border-left:6px solid #ffd166; } /* python */
+.card-6{ border-left:6px solid #79c0ff; } /* c */
+
+/* tiny corner geometric shapes for visual interest */
+.card::after{
+  content:"";
+  position:absolute;
+  right:-40px; bottom:-40px;
+  width:120px; height:120px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.02), transparent 40%);
+  transform: rotate(12deg);
+  opacity:0.9;
+}
+
+/* Contact form: refined glass panel */
+.contact-form{
+  padding:18px;border-radius:12px;background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border: 1px solid rgba(255,255,255,0.035); box-shadow: 0 18px 50px rgba(2,6,23,0.7);
+}
+.contact-form input,.contact-form textarea{
+  width:100%;padding:12px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--muted);
+  resize:vertical;font-size:15px;margin-top:6px;
+}
+.contact-form label{ color:var(--muted); font-weight:800; font-size:13px; }
+
+/* Footer */
+.site-footer{ text-align:center;color:var(--muted); margin-top:36px; padding:14px 20px; }
+
+/* Responsive */
+@media (max-width:1000px){
+  .hero{ grid-template-columns: 1fr 300px; padding:32px; }
+  .art-card{ width:280px;height:320px }
+  .hero-content h1{ font-size:40px }
+}
+@media (max-width:760px){
+  .hero{ grid-template-columns: 1fr; padding:28px; }
+  .hero-art{ order: -1; margin-bottom:6px; display:flex; justify-content:center }
+  .art-card{ width:86%; height:300px }
+  .site-header{ flex-direction:column; gap:10px; padding:12px }
+  .main-nav ul{ flex-wrap:wrap; justify-content:center; gap:10px }
+  .hero-content h1{ font-size:30px; text-align:center }
+  .hero-content p{ text-align:center }
+  .btn-row{ justify-content:center }
+  .cards{ flex-direction:column }
+}
+
+/* small accessibility tweak */
+a:focus, button:focus, input:focus, textarea:focus{ outline: 3px solid rgba(255,209,102,0.12); outline-offset: 2px; }
